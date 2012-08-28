@@ -1,6 +1,6 @@
 {
   "name": "witwip",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Where in the world is package.json?",
   "main": "witwip.js",
   "scripts": {
@@ -17,5 +17,8 @@
     "mocha": "~1.4.0"
   },
   "author": "Brian Link",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.6.0"
+  }
 }

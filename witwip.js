@@ -1,5 +1,6 @@
 var path = require('path'),
     fs = require('fs'),
+    existsSync = fs.existsSync ? fs.existsSync : path.existsSync,
     modulePathCache = {};
 
 module.exports = witwip;
@@ -29,7 +30,7 @@ function witwip(base, modulePath) {
   if (modulePath === '.') {
     while (base) {
       newPath = path.resolve(base, 'package.json');
-      if (fs.existsSync(newPath)) {
+      if (existsSync(newPath)) {
         newPath = fs.realpathSync(newPath);
         cache[modulePath] = newPath;
         return newPath;
@@ -40,7 +41,7 @@ function witwip(base, modulePath) {
   // Check a relative path for a package.json.
   else if (modulePath[0] === '.' || modulePath[0] === '/') {
     newPath = path.resolve(base, modulePath, 'package.json');
-    if (fs.existsSync(newPath)) {
+    if (existsSync(newPath)) {
       newPath = fs.realpathSync(newPath);
       cache[modulePath] = newPath;
       return newPath;
@@ -50,7 +51,7 @@ function witwip(base, modulePath) {
   else {
     while (base) {
       newPath = path.resolve(base, 'node_modules', modulePath, 'package.json');
-      if (fs.existsSync(newPath)) {
+      if (existsSync(newPath)) {
         newPath = fs.realpathSync(newPath);
         cache[modulePath] = newPath;
         return newPath;
