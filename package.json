@@ -4,7 +4,7 @@
   "description": "Where in the world is package.json?",
   "main": "witwip.js",
   "scripts": {
-    "test": "DEBUG=witwip ./node_modules/.bin/mocha"
+    "test": "ls -la test/node_modules/carmen & DEBUG=witwip ./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
