@@ -1,0 +1,21 @@
+{
+  "name": "witwip",
+  "version": "0.0.1",
+  "description": "Where in the world is package.json?",
+  "main": "witwip.js",
+  "scripts": {
+    "test": "./node_modules/mocha/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cpsubrian/node-witwip.git"
+  },
+  "keywords": [
+    "package.json"
+  ],
+  "devDependencies": {
+    "mocha": "~1.4.0"
+  },
+  "author": "Brian Link",
+  "license": "MIT"
+}
