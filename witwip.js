@@ -1,7 +1,8 @@
 var path = require('path'),
     fs = require('fs'),
     existsSync = fs.existsSync ? fs.existsSync : path.existsSync,
-    modulePathCache = {};
+    modulePathCache = {},
+    debug = require('debug')('witwip');
 
 module.exports = witwip;
 
@@ -23,6 +24,7 @@ function witwip(base, modulePath) {
   }
   var cache = modulePathCache[base];
   if (cache.hasOwnProperty(modulePath)) {
+      debug('Found `' + modulePath + '` in `' + base + '` cache');
       return cache[modulePath];
   }
 
@@ -30,6 +32,7 @@ function witwip(base, modulePath) {
   if (modulePath === '.') {
     while (base) {
       newPath = path.resolve(base, 'package.json');
+      debug('Trying to resolve `' + newPath + '`');
       if (existsSync(newPath)) {
         newPath = fs.realpathSync(newPath);
         cache[modulePath] = newPath;
@@ -41,6 +44,7 @@ function witwip(base, modulePath) {
   // Check a relative path for a package.json.
   else if (modulePath[0] === '.' || modulePath[0] === '/') {
     newPath = path.resolve(base, modulePath, 'package.json');
+    debug('Trying to resolve `' + newPath + '`');
     if (existsSync(newPath)) {
       newPath = fs.realpathSync(newPath);
       cache[modulePath] = newPath;
@@ -51,6 +55,7 @@ function witwip(base, modulePath) {
   else {
     while (base) {
       newPath = path.resolve(base, 'node_modules', modulePath, 'package.json');
+      debug('Trying to resolve `' + newPath + '`');
       if (existsSync(newPath)) {
         newPath = fs.realpathSync(newPath);
         cache[modulePath] = newPath;
