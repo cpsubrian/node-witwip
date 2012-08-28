@@ -20,7 +20,7 @@ API
 
 ### witwip.dir(base, [modulePath])
 Same as `witwip()` but returns the directory instead of the filepath of the
-found package.jso.
+found package.json.
 
 
 Usage
