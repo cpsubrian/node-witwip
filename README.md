@@ -1,6 +1,8 @@
 witwip - Where in the world is package.json?
 ============================================
 
+[![build status](https://secure.travis-ci.org/cpsubrian/node-witwip.png)](http://travis-ci.org/cpsubrian/node-witwip)
+
 Find package.json files relative to your current module or some other basepath.
 Search for local modules, search for modules installed with npm, or just find
 the closest package.json to the current file.
