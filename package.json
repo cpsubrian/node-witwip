@@ -1,10 +1,10 @@
 {
   "name": "witwip",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Where in the world is package.json?",
   "main": "witwip.js",
   "scripts": {
-    "test": "./node_modules/mocha/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
     "type": "git",
