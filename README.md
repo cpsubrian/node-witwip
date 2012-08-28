@@ -29,23 +29,24 @@ Usage
 Note: Pretend that all these examples are inside try/catch blocks (yours should be).
 
 ```js
-var findPkg = require('witwip');
+var findPkg = require('witwip'),
+    found;
 
 // Find the closest package.json to this module.
-findPkg(module);
+found = findPkg(module);
 // or
-findPkg(__dirname);
+found = findPkg(__dirname);
 
 // Look for the package.json of a dependency.
-findPkg(module, 'optimist');
+found = findPkg(module, 'optimist');
 // or
-findPkg(__dirname, 'optimist');
+found = findPkg(__dirname, 'optimist');
 
 // Check if a local dir is a module (has a package.json).
-findPkg(module, './local/dir/mymodule');
+found = findPkg(module, './local/dir/mymodule');
 
 // Find the package.json of the parent module to this module.
-findPkg(module.parent);
+found = findPkg(module.parent);
 ```
 
 
