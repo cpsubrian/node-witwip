@@ -59,6 +59,7 @@ strategy firm located in Aptos, CA and Washington, D.C.
 - - -
 
 ### License: MIT
+Copyright (c) 2012 ajax.org B.V
 Copyright (C) 2012 Terra Eclipse, Inc. ([http://www.terraeclipse.com](http://www.terraeclipse.com))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
