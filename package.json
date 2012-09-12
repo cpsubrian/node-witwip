@@ -14,7 +14,8 @@
     "package.json"
   ],
   "dependencies": {
-    "debug": "~0.7.0"
+    "debug": "~0.7.0",
+    "read-package-json": "~0.1.5"
   },
   "devDependencies": {
     "mocha": "~1.4.0"
