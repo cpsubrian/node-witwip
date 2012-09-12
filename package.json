@@ -1,6 +1,6 @@
 {
   "name": "witwip",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Where in the world is package.json?",
   "main": "witwip.js",
   "scripts": {
