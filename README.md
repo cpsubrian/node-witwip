@@ -7,20 +7,18 @@ Find package.json files relative to your current module or some other basepath.
 Search for local modules, search for modules installed with npm, or just find
 the closest package.json to the current file.
 
-`witwip` is synchronous and throws errors, so you should probably wrap it in
-a try/catch.
-
-Much of the code for `witwip` was copied almost verbatim from [architect](https://github.com/c9/architect), so, thanks guys :)
+Initial code for `witwip` was copied almost verbatim from [architect](https://github.com/c9/architect), so, thanks guys :)
 
 
 API
 ---
 
-### witwip(base, [modulePath])
-- **base** - The module object or path to start searching from.
+### witwip([base], [modulePath], callback)
+- **base** - The module object or path to start searching from (optional).
 - **modulePath** - The module name or local path to look for (optional).
+- **callback** - function (err, pkgPath, pkgData)
 
-### witwip.dir(base, [modulePath])
+### witwip.dir([base], [modulePath], callback)
 Same as `witwip()` but returns the directory instead of the filepath of the
 found package.json.
 
@@ -28,27 +26,40 @@ found package.json.
 Usage
 -----
 
-Note: Pretend that all these examples are inside try/catch blocks (yours should be).
-
 ```js
-var findPkg = require('witwip'),
-    found;
+var findPkg = require('witwip');
 
 // Find the closest package.json to this module.
-found = findPkg(module);
+findPkg(function(err, pkgPath, pkgData) {
+
+});
 // or
-found = findPkg(__dirname);
+findPkg(module, function(err, pkgPath, pkgData) {
+
+});
+// or
+findPkg(__dirname, function(err, pkgPath, pkgData) {
+
+});
 
 // Look for the package.json of a dependency.
-found = findPkg(module, 'optimist');
+findPkg(module, 'optimist', function(err, pkgPath, pkgData) {
+
+});
 // or
-found = findPkg(__dirname, 'optimist');
+findPkg(__dirname, 'optimist', function(err, pkgPath, pkgData) {
+
+});
 
 // Check if a local dir is a module (has a package.json).
-found = findPkg(module, './local/dir/mymodule');
+findPkg(module, './local/dir/mymodule', function(err, pkgPath, pkgData) {
+
+});
 
 // Find the package.json of the parent module to this module.
-found = findPkg(module.parent);
+findPkg(module.parent, function(err, pkgPath, pkgData) {
+
+});
 ```
 
 
