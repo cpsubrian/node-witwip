@@ -4,7 +4,9 @@
   "description": "Where in the world is package.json?",
   "main": "witwip.js",
   "scripts": {
-    "test": "npx --no-install mocha --reporter spec"
+    "test": "npx --no-install mocha --reporter spec",
+    "ncu": "npx --no-install ncu",
+    "ncu:upgrade": "npm run ncu -- -u"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,8 @@
     "read-package-json": "~0.1.5"
   },
   "devDependencies": {
-    "mocha": "~1.4.0"
+    "mocha": "~1.4.0",
+    "npm-check-updates": "^11.4.1"
   },
   "author": "Brian Link",
   "license": "MIT",
