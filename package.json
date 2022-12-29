@@ -1,10 +1,12 @@
 {
   "name": "witwip",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Where in the world is package.json?",
   "main": "witwip.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "npx --no-install mocha --reporter spec",
+    "ncu": "npx --no-install ncu",
+    "ncu:upgrade": "npm run ncu -- -u"
   },
   "repository": {
     "type": "git",
@@ -14,11 +16,12 @@
     "package.json"
   ],
   "dependencies": {
-    "debug": "~0.7.0",
-    "read-package-json": "~0.1.5"
+    "debug": "^4.3.4",
+    "read-package-json": "~3.0.1"
   },
   "devDependencies": {
-    "mocha": "~1.4.0"
+    "mocha": "^10.0.0",
+    "npm-check-updates": "^16.1.0"
   },
   "author": "Brian Link",
   "license": "MIT",
